@@ -1,0 +1,6 @@
+@dockerPractica_3_HostAddress = http://localhost:5200
+
+GET {{dockerPractica_3_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
