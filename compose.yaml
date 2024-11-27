@@ -1,0 +1,21 @@
+services:
+  server:
+    build:
+      context: .
+      target: final
+    ports:
+      - 8080:8080
+    env_file:
+      - ./src/.env
+
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_HOST: ${DB_HOST}
+      MYSQL_PORT: ${DB_PORT}
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - 3306:3306
