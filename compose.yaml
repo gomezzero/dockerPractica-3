@@ -12,6 +12,7 @@ services:
     image: mysql:latest
     restart: always
     environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
       MYSQL_HOST: ${DB_HOST}
       MYSQL_PORT: ${DB_PORT}
       MYSQL_DATABASE: ${DB_DATABASE}
